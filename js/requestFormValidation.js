@@ -140,8 +140,18 @@ function formValidation() {
         return false;
     }
 
-    if(age.value.length < 2 || age.value.length > 2) {
+    if(age.value < 16) {
+        document.getElementById("rAgeErr").innerHTML="* Age having 16 or more than that can apply for request the blood";
+        return false;
+    }
+
+    if(age.value.length < 2) {
         document.getElementById("rAgeErr").innerHTML="* Enter your proper age";
+        return false;
+    }
+
+    if(age.value.length > 2) {
+        document.getElementById("rAgeErr").innerHTML="* This can't be age";
         return false;
     }
 
@@ -186,6 +196,11 @@ function formValidation() {
     //message validation
     if(message.value === ""){
         document.getElementById("rMessageErr").innerHTML="* Please enter your message!";
+        return false;
+    }
+
+    if(message.value.match(/\d$/)){
+        document.getElementById("rMessageErr").innerHTML="* Message cannot be number only";
         return false;
     }
 

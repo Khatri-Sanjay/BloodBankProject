@@ -16,7 +16,7 @@
 
     $deleteQuery = "DELETE FROM donorhistory WHERE id='$id'";
 
-    echo $deleteQuery;
+    // echo $deleteQuery;
 
     if(mysqli_query($conn,$deleteQuery)){
 

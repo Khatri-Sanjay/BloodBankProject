@@ -52,21 +52,20 @@
     echo $err; 
     
     ?>
-
     </div>
 
     <div class="login">    
         <form action="" name="regForm" method="POST" onsubmit="return formValidation()">    
             
             <label><b>Username</b></label>    
-            <input type="text" name="Uname" id="Uname" placeholder="Username">
+            <input type="text" name="Uname" id="Uname" placeholder="Username" required>
             <br> 
-            <span style="color:#ff9966; font: size 14px; font-weight:bold;" id="rUsernameErr"></span>   
+            <span style="color:#ff9966; font: size 14px;" id="rUsernameErr"></span>   
             <br><br>    
             <label><b>Password</b></label>    
-            <input type="Password" name="Pass" id="Pass" placeholder="Password">
+            <input type="Password" name="Pass" id="Pass" placeholder="Password" required>
             <br>
-            <span style="color:#ff9966; font: size 14px; font-weight:bold;" id="rPasswordErr"></span>    
+            <span style="color:#ff9966; font: size 14px;" id="rPasswordErr"></span>    
             <br><br>
             <button type="submit" class="submit" id="submit" name="submit">Log In Here</button>
         </form> 

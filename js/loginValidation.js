@@ -1,21 +1,22 @@
+
 const username = document.getElementById("Uname");
 const password = document.getElementById("Pass");
 
 function formValidation() {
 
     // username validation
-    if(!username.value.match(/^[a-z\sA-z]+$/)){
-        document.getElementById("rNameErr").innerHTML="* Admin usrname cannot be number";
+    if(username.value === ""){
+        document.getElementById("rNameErr").innerHTML="* Please enter username!";
         return false;
     }
 
-    if (username.value.length < 6) {
-        document.getElementById("rUsernameErr").innerHTML="* Enter your proper name";
+    if (username.value.length < 4) {
+        document.getElementById("rUsernameErr").innerHTML="* Admin username is between 4 to 20  letter";
         return false;
     }
 
-    if (username.value.length > 30) {
-        document.getElementById("rUsernameErr").innerHTML="* Enter your proper name";
+    if (username.value.length > 20) {
+        document.getElementById("rUsernameErr").innerHTML="* Admin username is between 4 to 20  letter";
         return false;
     }
 

@@ -185,6 +185,11 @@ function formValidation() {
         return false;
     }
 
+    if(message.value.match(/\d$/)){
+        document.getElementById("rMessageErr").innerHTML="* Message cannot be number only";
+        return false;
+    }
+
     if(message.value.length < 10){
         document.getElementById("rMessageErr").innerHTML="* Please enter proper message!";
         return false;

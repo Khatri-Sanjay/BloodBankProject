@@ -27,16 +27,15 @@
         <form action="admindonorHistory.php" method="get">
             <input type="hidden" name="pages" value="1"> 
             <input type="text" name="search" value="" placeholder="Search through name">
-            <button type="submit">Submit</button>
+            <button type="submit">Search</button>
         </form> 
     </div>
 
     <div class="success">
-        <?php 
+        <?php        
+                error_reporting(E_ERROR | E_PARSE);
+                echo $_SESSION['success']; 
 
-            error_reporting(E_ERROR | E_PARSE);
-            echo $_SESSION['success']; 
-        
         ?>
 
     </div>
@@ -53,7 +52,7 @@
                 <th>Age</th>
                 <th>Gender</th>
                 <th>BloodGroup</th>
-                <th>History</th>
+                <th>Donated times</th>
                 <th>Contact</th>
                 <th>Address</th>
                 <th>Action</th>

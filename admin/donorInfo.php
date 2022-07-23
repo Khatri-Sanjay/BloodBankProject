@@ -35,7 +35,7 @@
                     <option value="O-ve">O-ve</option>
                     <option value="" selected>----</option>
                 </select>
-            <button type="submit">Submit</button>
+            <button type="submit">Search</button>
         </form> 
     </div>
 
