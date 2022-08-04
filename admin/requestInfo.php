@@ -40,7 +40,17 @@
         </form> 
     </div>
     
-    <br><br>
+    <br><br><br>
+  
+    <div class="msg">
+        <?php
+                
+            error_reporting(E_ERROR | E_PARSE);
+            echo $_SESSION['msg'];
+            
+        ?>
+    </div>
+
 
     <center>
     <table class="content-table" width="100%">
@@ -130,12 +140,23 @@
         <?php
             if ($row['Status']==0){
         ?>
+
                 <button class="approve">
                     <a href="../approveReject/requestStatus.php?requestId=<?php echo $row ['Id'];?>&status=1" onclick = "sendMail('<?php echo $row['Email'];?>')">Approve</a>
                 </button>
                 <button class="reject">
                     <a href="../approveReject/requestStatus.php?requestId=<?php echo $row ['Id'];?>&status=2" onclick = "sendMail('<?php echo $row['Email'];?>')">Reject</a>
                 </button>
+
+
+                <!-- <button class="approve">
+                    <a href="../approveReject/requestStatus.php?requestId=<?php echo $row ['Id'];?>&status=1" onclick = "approveMail('<?php $email = $row['Email'];?>')">Approve</a>
+                </button>
+
+                <button class="reject">
+                    <a href="../approveReject/requestStatus.php?requestId=<?php echo $row ['Id'];?>&status=2" onclick = "rejectMail('<?php $email = $row['Email'];?>')">Reject</a>
+                </button> -->
+
         <?php } 
         ?>
         </td>
@@ -163,19 +184,67 @@
         $total_pages = ceil($total_data/$data_per_page);
         // echo $total_pages;
 
-
         for($i=1;$i<=$total_pages;$i++){
 
 
             echo '<a style="font-size:12px;color:red;padding: 5px;bottom:0;" href="requestInfo.php?pages='.$i.'&search='.$_GET['search'].'   ">'.$i.'</a>';
         }
+      
         
+    
     ?>
 
     <script>
-      function sendMail(m){
-         parent.location = "mailto:"+m;
-      }
+
+        function sendMail(m){
+            parent.location = "mailto:"+m;
+        }
+
+        // function approveMail(){
+        //     // parent.location = "mailto:"+m;
+            
+        //     <?php
+        //         $to_email = $email;
+        //         $subject = "Blood Request Approved";
+        //         $body = "Your blood request has approved";
+        //         $headers = "From: khatrisanjay804@gmail.com";
+
+        //         if (mail($to_email, $subject, $body, $headers)) {
+        //             $_SESSION['msg'] ="----Email has sent succesfully----";
+                    
+        //             // echo '<script>alert("Approve Mail has sent succesfully")</script>';
+        //         }
+        //         else{
+        //             $_SESSION['msg'] ="----Email unable to sent----";
+        //             // echo '<script>alert("Approve Email unable sent succesfully")</script>';
+        //         }
+        //     ?>
+        // }
+
+
+        // function rejectMail(){
+        //     // parent.location = "mailto:"+m;
+            
+        //     <?php
+        //         $to_email = $email;
+        //         $subject = "Blood Request Reject";
+        //         $body = "Your blood request has rejected";
+        //         $headers = "From: khatrisanjay804@gmail.com";
+
+        //         if (mail($to_email, $subject, $body, $headers)) {
+        //             $_SESSION['msg'] ="----Email has sent succesfully----";
+        //             // echo '<script>alert("Reject Mail has sent succesfully")</script>';
+        //             // header('Location: ../admin/mail/rejectMail.php');
+
+        //         }
+        //         else{
+        //             $_SESSION['msg'] ="----Email unable to sent----";
+        //             // echo '<script>alert("Reject Email unable sent succesfully")</script>';
+                    
+        //         }
+        //     ?>     
+        // }
+        // unset($_SESSION['msg']);
     </script>
     
     

@@ -39,7 +39,15 @@
         </form> 
     </div>
 
-    <br><br>
+    <br><br><br>
+    <div class="msg">
+        <?php
+                
+            error_reporting(E_ERROR | E_PARSE);
+            echo $_SESSION['msg1'];
+            
+        ?>
+    </div>
 
     <center>
     <table class="content-table">
@@ -133,6 +141,16 @@
                 <button class="reject" id="btn">
                     <a href="../approveReject/donorStatus.php?requestId=<?php echo $row ['Id'];?>&status=2" onclick = "sendMail('<?php echo $row['Email'];?>')">Reject</a>
                 </button>
+
+                <!-- <button class="approve">
+                    <a href="../approveReject/donorStatus.php?requestId=<?php echo $row ['Id'];?>&status=1" onclick = "approveMail('<?php $email = $row['Email'];?>')">Approve</a>
+                </button>
+
+                <button class="reject">
+                    <a href="../approveReject/donorStatus.php?requestId=<?php echo $row ['Id'];?>&status=2" onclick = "rejectMail('<?php $email = $row['Email'];?>')">Reject</a>
+                </button> -->
+
+
             <?php
                 }
             ?>
@@ -175,9 +193,57 @@
     ?>
 
     <script>
-      function sendMail(m){
-         parent.location = "mailto:"+m;
-      }
+        
+        function sendMail(m){
+            parent.location = "mailto:"+m;
+        }
+
+        // function approveMail(){
+        //     // parent.location = "mailto:"+m;
+            
+        //     <?php
+        //         $to_email = $email;
+        //         $subject = "Blood Request Approved";
+        //         $body = "Your blood request has approved";
+        //         $headers = "From: khatrisanjay804@gmail.com";
+
+        //         if (mail($to_email, $subject, $body, $headers)) {
+        //             $_SESSION['msg1'] ="----Email has sent succesfully----";
+                    
+        //             // echo '<script>alert("Approve Mail has sent succesfully")</script>';
+        //         }
+        //         else{
+        //             $_SESSION['msg1'] ="----Email unable to sent----";
+        //             // echo '<script>alert("Approve Email unable sent succesfully")</script>';
+        //         }
+        //     ?>
+        // }
+
+
+        // function rejectMail(){
+        //     // parent.location = "mailto:"+m;
+            
+        //     <?php
+        //         $to_email = $email;
+        //         $subject = "Blood Request Reject";
+        //         $body = "Your blood request has rejected";
+        //         $headers = "From: khatrisanjay804@gmail.com";
+
+        //         if (mail($to_email, $subject, $body, $headers)) {
+        //             $_SESSION['msg1'] ="----Email has sent succesfully----";
+        //             // echo '<script>alert("Reject Mail has sent succesfully")</script>';
+        //             // header('Location: ../admin/mail/rejectMail.php');
+
+        //         }
+        //         else{
+        //             $_SESSION['msg1'] ="----Email unable to sent----";
+        //             // echo '<script>alert("Reject Email unable sent succesfully")</script>';
+                    
+        //         }
+        //     ?>     
+        // }
+        // unset($_SESSION['msg1']);
+
     </script> 
 
 </center>

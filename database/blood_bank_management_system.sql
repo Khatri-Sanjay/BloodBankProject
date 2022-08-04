@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2022 at 04:56 PM
+-- Generation Time: Aug 04, 2022 at 01:24 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -68,15 +68,15 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`Id`, `Name`, `Email`, `Age`, `CitizenShip_No`, `BloodGroup`, `Gender`, `Contact`, `Address`, `Status`, `Message`) VALUES
-(1, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 21, '12345678', 'AB+ve', 'Male', '9861494803', 'Suryabinyak', 1, 'I want to donate blood\r\n'),
-(2, 'Ram Jung Thapa', 'ramjungthapa@gmail.com', 34, '98782472', 'A+ve', 'Male', '9812334546', 'Banepa-9,Kavre', 2, 'I want to donate blood '),
-(3, 'Arjun Bhusal', 'bhusalarjun123@gmail.com', 22, '1234567', 'A-ve', 'Male', '9871234560', 'Kapan, Kathmandu', 1, 'I want to donate blood'),
+(1, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 21, '12345678', 'AB+ve', 'Male', '9861494803', 'Suryabinyak', 0, 'I want to donate blood\r\n'),
+(2, 'Ram Jung Thapa', 'ramjungthapa@gmail.com', 34, '98782472', 'A+ve', 'Male', '9812334546', 'Banepa-9,Kavre', 0, 'I want to donate blood '),
+(3, 'Arjun Bhusal', 'bhusalarjun123@gmail.com', 22, '1234567', 'A-ve', 'Male', '9871234560', 'Kapan, Kathmandu', 0, 'I want to donate blood'),
 (4, 'Kisim Subba', 'limbukisim10@gmail.com', 21, '453721882', 'AB-ve', 'Female', '9810051014', 'Sukedhara, Kathmandu', 0, 'I want to donate blood'),
 (5, 'Sita thapa', 'sitaramthapa@gmail.com', 30, '243453690', 'B-ve', 'Female', '9765231408', 'kathmandu', 0, 'I want to donate blood'),
-(6, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 45, '2324-35354', 'A+ve', 'Male', '9861494803', 'Suryabinyak-9,Bhaktapur', 0, 'sngfsgndgfdg\r\n'),
-(7, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 23, '29-01-3546', 'B+ve', 'Male', '9861494803', 'Suryabinyak-9,Bhaktapur', 0, ' sljnsfknpkmpkdnbp'),
-(8, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 23, '223545', 'A-ve', 'Male', '9861494803', 'Suryabinyak-9,Bhaktapur', 0, '2123345632456'),
-(9, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 23, '223545', 'A-ve', 'Male', '9861494803', 'Suryabinyak-9,Bhaktapur', 2, '2123345632456');
+(10, 'Sherya parajuli', 'parajulishreya@gmail.com', 25, '2345678', 'A-ve', 'Female', '9876543210', 'bhaktapur', 0, 'I want to donate blood'),
+(12, 'Parbat Subedi', 'parbatsubedi000@gmail.com', 24, '12-334-76743', 'B+ve', 'Male', '9841505523', 'Kathmandu', 0, 'I want to donate blood'),
+(13, 'Nelson Adhakari', 'adhakarinelson0@gmail.com', 21, '04-01-75-05901', 'B+ve', 'Male', '9808490677', 'Kathmandu', 0, 'I want to donate blood'),
+(14, 'Nelson Mandela', 'mandelanelson01@gmail.com', 35, '05-230-65-3243', 'A+ve', 'Male', '9818293456', 'Kathmandu,Nepal', 0, 'I want to donate blood');
 
 -- --------------------------------------------------------
 
@@ -135,10 +135,13 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`Id`, `Name`, `Email`, `Age`, `CitizenShip_No`, `BloodGroup`, `BloodPound`, `Gender`, `Contact`, `Address`, `Status`, `Message`) VALUES
-(1, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 21, '2345678', 'A+ve', 5, 'Male', '9861494803', 'Suryabinyak', 2, 'I need blood'),
-(2, 'Kisim Subba', 'limbukisim10@gmail.com', 21, '453721882', 'AB+ve', 3, 'Female', '9810051014', 'Sukedhara, Kathmandu', 1, 'I need blood'),
+(1, 'Sanjay khatri', 'khatrisanjay804@gmail.com', 21, '2345678', 'A+ve', 5, 'Male', '9861494803', 'Suryabinyak', 0, 'I need blood'),
+(2, 'Kisim Subba', 'limbukisim10@gmail.com', 21, '453721882', 'AB+ve', 3, 'Female', '9810051014', 'Sukedhara, Kathmandu', 0, 'I need blood'),
 (3, 'Ram Jung Thapa', 'ramjungthapa@gmail.com', 32, '453721882', 'AB-ve', 2, 'Male', '9812334546', 'Banepa-9, Kavre', 0, 'I need blood'),
-(4, 'Maya Ranjitkar', 'www.mayaranjitkar@gmail.com', 20, '874558920', 'O-ve', 2, 'Female', '9876543210', 'Kamalbinak, Bhaktapur', 0, 'I need blood');
+(4, 'Maya Ranjitkar', 'www.mayaranjitkar@gmail.com', 20, '874558920', 'O-ve', 2, 'Female', '9876543210', 'Kamalbinak, Bhaktapur', 0, 'I need blood'),
+(29, 'Sanjay khatri', 'khatrisanjay805@gmail.com', 22, '1234567890', 'B+ve', 5, 'Male', '9861494803', 'Kathmandu', 0, 'I want blood'),
+(34, 'Roshan Magar', 'roshanmgr130@gmail.com', 26, '1234567', 'A-ve', 2, 'Male', '9861494803', 'Kathmandu', 0, 'I want blood immedietly'),
+(35, 'Parbat Subedi', 'parbatsubedi000@gmail.com', 21, '45-345-3847', 'A-ve', 2, 'Male', '9843505523', 'Kathmandu', 0, 'I want blood');
 
 --
 -- Indexes for dumped tables
@@ -182,7 +185,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `donorhistory`
@@ -194,7 +197,7 @@ ALTER TABLE `donorhistory`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

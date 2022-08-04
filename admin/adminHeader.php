@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/dynamic.css">
     <script src="https://kit.fontawesome.com/3dbbd58a4c.js" crossorigin="anonymous"></script>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 </head>
 <body>
     <nav class="header">
