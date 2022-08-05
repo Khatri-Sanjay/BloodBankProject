@@ -34,8 +34,13 @@
     <div class="success">
         <?php        
                 error_reporting(E_ERROR | E_PARSE);
-                echo $_SESSION['success']; 
+                if($_SESSION['success']!=''){
 
+                    echo $_SESSION['success']; 
+
+                    $_SESSION['success'] = '';
+
+                }
         ?>
 
     </div>

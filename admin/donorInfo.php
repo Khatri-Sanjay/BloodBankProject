@@ -44,7 +44,14 @@
         <?php
                 
             error_reporting(E_ERROR | E_PARSE);
-            echo $_SESSION['msg1'];
+            
+            if($_SESSION['msg1']!=''){
+
+                echo $_SESSION['msg1']; 
+
+                $_SESSION['msg1'] = '';
+
+            }
             
         ?>
     </div>

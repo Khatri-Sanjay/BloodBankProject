@@ -46,7 +46,14 @@
         <?php
                 
             error_reporting(E_ERROR | E_PARSE);
-            echo $_SESSION['msg'];
+
+            if($_SESSION['msg']!=''){
+
+                echo $_SESSION['msg']; 
+
+                $_SESSION['msg'] = '';
+
+            }
             
         ?>
     </div>
@@ -201,9 +208,13 @@
         }
 
         // function approveMail(){
+        //     // window.location.replace("../mail/amail.php");
         //     // parent.location = "mailto:"+m;
+
             
         //     <?php
+        //         // header("Location: ../mail/mail1.php")
+
         //         $to_email = $email;
         //         $subject = "Blood Request Approved";
         //         $body = "Your blood request has approved";
@@ -211,7 +222,6 @@
 
         //         if (mail($to_email, $subject, $body, $headers)) {
         //             $_SESSION['msg'] ="----Email has sent succesfully----";
-                    
         //             // echo '<script>alert("Approve Mail has sent succesfully")</script>';
         //         }
         //         else{
@@ -226,6 +236,7 @@
         //     // parent.location = "mailto:"+m;
             
         //     <?php
+        //         // header("Location: ../mail/mail2.php")
         //         $to_email = $email;
         //         $subject = "Blood Request Reject";
         //         $body = "Your blood request has rejected";
